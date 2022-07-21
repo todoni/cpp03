@@ -1,5 +1,5 @@
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = zombie
+NAME = claptrap
 SRCS = main.cpp ClapTrap.cpp 
 OBJS = $(SRCS:.cpp=.o)
 
