@@ -25,6 +25,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& ref)
 {
+	std::cout << "ScavTrap assigment overload called." << std::endl;
 	ClapTrap::operator=(ref);
 	return (*this);
 }

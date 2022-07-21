@@ -30,6 +30,10 @@ int	main()
 	ScavTrap	SS("test");
 	S.attack("sohan");
 	S.guardGate();
+
+	S.printStatus();
+	S = SS;
+	S.printStatus();
 	
 	return (0);
 }

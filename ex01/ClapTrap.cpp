@@ -20,6 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap& ref)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& ref)
 {
+	std::cout << "ClapTrap assigment overload called." << std::endl;
 	if (this != &ref)
 	{
 		this->name = ref.name;
