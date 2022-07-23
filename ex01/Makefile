@@ -1,4 +1,4 @@
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 NAME = scavtrap
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -13,15 +13,18 @@ $(NAME) : $(OBJS)
 
 clean :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 
 fclean :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 	rm -f $(NAME)
 re :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 	rm -f $(NAME)
 	make $(NAME)
 
 .PHONY : all clean fclean re
 
--include $(OBJ:.o=.d)
+-include $(OBJS:.o=.d)

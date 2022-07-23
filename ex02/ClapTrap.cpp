@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& ref)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	(*this) = ref;
 }
 
@@ -68,4 +68,9 @@ void	ClapTrap::printStatus(void)
 	std::cout << this->energyPoint << std::endl;
 	std::cout << this->attackDamage << std::endl;
 	std::cout << std::endl;
+}
+
+unsigned int	ClapTrap::getAP(void)
+{
+	return (this->attackDamage);
 }

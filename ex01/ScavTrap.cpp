@@ -3,13 +3,19 @@
 ScavTrap::ScavTrap()
 	: ClapTrap()
 {
-	std::cout << "ScavTrap with no name has born." << std::endl;
+	std::cout << "ScavTrap " << this->name << " has born." << std::endl;
+	this->hitPoint = 100;
+	this->energyPoint = 50;
+	this->attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const std::string name)
 	: ClapTrap(name)
 {
-	std::cout << "ScavTrap " + name + " has born." << std::endl;
+	std::cout << "ScavTrap " + this->name + " has born." << std::endl;
+	this->hitPoint = 100;
+	this->energyPoint = 50;
+	this->attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& ref)
@@ -20,17 +26,23 @@ ScavTrap::ScavTrap(const ScavTrap& ref)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Bye" << std::endl;
+	std::cout << "ScavTrap " << this->name << " Bye" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& ref)
 {
 	std::cout << "ScavTrap assigment overload called." << std::endl;
-	ClapTrap::operator=(ref);
+	if (this != &ref)
+		ClapTrap::operator=(ref);
 	return (*this);
 }
 
 void	ScavTrap::guardGate(void)
 {
 	std::cout << "ScavTrap is now on Gate keeper mode." << std::endl;
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	std::cout << "ScavTrap attacks " + target << std::endl;
 }

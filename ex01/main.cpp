@@ -1,38 +1,27 @@
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int	main()
 {
-	ClapTrap	A;
-	ClapTrap	B("sohan");
-	ClapTrap	C(A);
-	ClapTrap	D(B);
+	ClapTrap	C;
+	ScavTrap	S("sohan");
 
-	A.printStatus();
-	B.printStatus();
 	C.printStatus();
-	D.printStatus();
-
-	A.attack("somebody");
-	B.attack("somebody");
-
-	A.printStatus();
-	B.printStatus();
-
-	C.beRepaired(100);
-	B.beRepaired(50);
-	
-	A.printStatus();
-	B.printStatus();
-	C.printStatus();
-	D.printStatus();
-
-	ScavTrap	S;
-	ScavTrap	SS("test");
-	S.attack("sohan");
-	S.guardGate();
-
 	S.printStatus();
-	S = SS;
+
+	C.attack("ScavTrap sohan");
+	S.takeDamage(C.getAP());
+	
+	C.printStatus();
+	S.printStatus();
+
+	S.attack("ClapTrap Annonymous");
+	C.takeDamage(S.getAP());
+	
+	S.printStatus();
+	C.printStatus();
+
+	S.beRepaired(50);
 	S.printStatus();
 	
 	return (0);

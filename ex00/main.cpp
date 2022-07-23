@@ -5,7 +5,7 @@ int	main()
 	ClapTrap	A;
 	ClapTrap	B("sohan");
 	ClapTrap	C(A);
-	ClapTrap	D(B);
+	ClapTrap	D = B;
 
 	A.printStatus();
 	B.printStatus();

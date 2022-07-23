@@ -1,4 +1,4 @@
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MD
 NAME = fragtrap
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -13,12 +13,15 @@ $(NAME) : $(OBJS)
 
 clean :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 
 fclean :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 	rm -f $(NAME)
 re :
 	rm -f $(OBJS)
+	rm -f $(OBJS:.o=.d)
 	rm -f $(NAME)
 	make $(NAME)
 

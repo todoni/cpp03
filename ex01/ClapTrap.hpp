@@ -5,13 +5,13 @@
 # include <string>
 
 # define DEFAULT_NAME "Annonymous"
-# define DEFAULT_HP 100
-# define DEFAULT_EP 50
-# define DEFAULT_AP 20
+# define DEFAULT_HP 10
+# define DEFAULT_EP 10
+# define DEFAULT_AP 0
 
 class	ClapTrap
 {
-	private:
+	protected:
 		std::string	name;
 		int	hitPoint;
 		int	energyPoint;
@@ -29,6 +29,7 @@ class	ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	printStatus(void);
+		unsigned int	getAP(void);
 };
 
 #endif
